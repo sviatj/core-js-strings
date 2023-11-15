@@ -402,8 +402,19 @@ function reverseWords(str) {
  *   invertCase('JavaScript is Fun') => 'jAVASCRIPT IS fUN'
  *   invertCase('12345') => '12345'
  */
-function invertCase(/* str */) {
-  throw new Error('Not implemented');
+function invertCase(str) {
+  if (str === '' || str === null || str === undefined) {
+    return 0;
+  }
+  let sub = '';
+  for (let i = 0; i <= str.length - 1; i += 1) {
+    if (str[i] === str[i].toUpperCase()) {
+      sub += str[i].toLowerCase();
+    } else if (str[i] !== str[i].toUpperCase()) {
+      sub += str[i].toUpperCase();
+    }
+  }
+  return sub;
 }
 
 /**
@@ -469,8 +480,8 @@ function unbracketTag(str) {
  *   ],
  *   'info@gmail.com' => ['info@gmail.com']
  */
-function extractEmails(/* str */) {
-  throw new Error('Not implemented');
+function extractEmails(str) {
+  return str.split(';');
 }
 
 /**
